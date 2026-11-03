@@ -1,0 +1,18 @@
+name: ci
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Kontrola
+        run: |
+          echo "Tactus test $(date -u +%FT%TZ)" | tee report.txt
+          test -f README.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: report
+          path: report.txt
