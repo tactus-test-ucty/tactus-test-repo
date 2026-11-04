@@ -1,1 +1,2 @@
 Zkouška naostro modulu git 4. 11. 2026 (Opus).
+Druhý commit přímo do main.
